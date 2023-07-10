@@ -1,0 +1,17 @@
+### List env values
+GET http://localhost:8080/actuator/env
+
+### change env value
+POST http://localhost:8080/actuator/env
+Content-Type: application/json
+
+{
+    "name":"your-property-name",
+    "value":"your-value"
+}
+
+### register non existing app -> will be reported offline
+POST http://localhost:8080/instances
+Content-Type: application/json
+
+{"name":"non-existing-app","managementUrl":"http://127.0.0.1:1","healthUrl":"http://127.0.0.1:1","serviceUrl":"http://127.0.0.1:1","metadata":{"startup":"2023-07-10T11:34:00.0000+02:00"}}
